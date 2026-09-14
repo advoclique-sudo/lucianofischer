@@ -666,6 +666,19 @@ footer{background:#080808;border-top:1px solid var(--borda);padding:60px 0 110px
     barra.classList.toggle('visivel', window.scrollY > hero.offsetHeight * .7);
   },{passive:true});
 })();
+
+/* ---------- Google Ads - conversao de Contato no clique do WhatsApp (AW-18444816825) ---------- */
+document.addEventListener('click', function(e){
+  var link = e.target.closest('a[href*="wa.me"]');
+  if (link && typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18444816825/qiyiCI7b5_ccELmjlttE',
+      'value': 1.0,
+      'currency': 'BRL',
+      'transport_type': 'beacon'
+    });
+  }
+});
 </script>
 </body>
 </html>
